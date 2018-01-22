@@ -1,28 +1,25 @@
 /*
-在一个二维数组中，每一行都按照从左到右递增的顺序排序，
-每一列都按照从上到下递增的顺序排序。
-请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+There is a table World
++-----------------+------------+------------+--------------+---------------+
+| name            | continent  | area       | population   | gdp           |
++-----------------+------------+------------+--------------+---------------+
+| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
+| Albania         | Europe     | 28748      | 2831741      | 12960000      |
+| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
+| Andorra         | Europe     | 468        | 78115        | 3712000       |
+| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
++-----------------+------------+------------+--------------+---------------+
+A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.
+Write a SQL solution to output big countries' name, population and area.
+For example, according to the above table, we should output:
++--------------+-------------+--------------+
+| name         | population  | area         |
++--------------+-------------+--------------+
+| Afghanistan  | 25500100    | 652230       |
+| Algeria      | 37100000    | 2381741      |
++--------------+-------------+--------------+
 */
-class Solution {
-public:
-    bool Find(int target, vector<vector<int> > array) {
-        int r = array.size();
-        int c = array[0].size();
-        int i,j;
-        for(i = r - 1,j = 0; i >= 0 && j < c;){
-            if(array[i][j] == target)
-                return true;
-            else if(array[i][j] > target){
-                i--;
-                continue;
-            }
-            else{
-                if(array[i][j] < target) {
-                    j++;
-                    continue;
-                }
-            }
-        }
-        return false;
-    }
-};
+# Write your MySQL query statement below
+SELECT name,population,area 
+FROM World 
+WHERE population>25000000 OR area>3000000;
