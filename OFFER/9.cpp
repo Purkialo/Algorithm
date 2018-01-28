@@ -5,13 +5,13 @@
 class Solution {
 public:
     int jumpFloorII(int number) {
-		int target = 0;
+		int res = 0;
         if (number < 2)
             return 1;
         
         for (int i = number - 1; i >= 0;i--)
-            target +=jumpFloorII(i);
-        return target;
+            res +=jumpFloorII(i);
+        return res;
     }
 };
 /*
