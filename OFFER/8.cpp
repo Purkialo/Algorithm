@@ -14,3 +14,21 @@ public:
         return jumpFloor(number - 1) + jumpFloor(number - 2);
     }
 };
+/*非递归
+public int JumpFloor(int target){
+　　if(target<0)
+　　　　return 0;
+　　int[] fib={0,1,2}; 
+　　if(target<3)
+　　　　return fib[target];
+　　int total=0;
+　　int firstElem=1;
+　　int secondElem=2;
+　　for(int i=3;i<=target;i++){  
+　　　　total=firstElem+secondElem;
+　　　　firstElem=secondElem;
+　　　  secondElem=total;  //迭代
+　　}
+　　return total;
+}
+*/
