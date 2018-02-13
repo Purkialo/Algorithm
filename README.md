@@ -1,2 +1,0 @@
-# Algorithm
-Just for practice : )
