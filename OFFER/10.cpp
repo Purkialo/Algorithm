@@ -10,5 +10,5 @@ public:
 			return number;
 		}
     	return rectCover(number - 2) + rectCover(number - 1);
-    } 
+    }
 };
